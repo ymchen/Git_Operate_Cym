@@ -12,6 +12,7 @@ pwd
 可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，
 然后，把本地仓库的内容推送到GitHub仓库
 	git remote add origin https://github.com/ymchen/Git_Operate_Cym.git
+	
 Updates were rejected because the tip of your current branch is behind
 刚创建的github版本库，在push代码时遇到以上错误：有如下几种解决方法：
 push前先将远程repository修改pull下来
