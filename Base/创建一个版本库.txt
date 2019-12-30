@@ -2,6 +2,8 @@
 mkdir learngit
 cd learngit
 pwd
+
+
 2.第二步，通过git init命令把这个目录变成Git可以管理的仓库
 	git init
 	
@@ -12,8 +14,13 @@ pwd
 可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，
 然后，把本地仓库的内容推送到GitHub仓库
 	git remote add origin https://github.com/ymchen/Git_Operate_Cym.git
+
+因为在码云上新建项目的时候, 勾选了"使用Readme文件初始化这个项目", 所以会生成一个如下的文件, 而你本地库并没有, 所以出错了. 提示使用 ' git pull ... ' 命令..
+git pull --rebase origin master, 将gitee上的文件和本地库合并.
+
 Updates were rejected because the tip of your current branch is behind
 刚创建的github版本库，在push代码时遇到以上错误：有如下几种解决方法：
 push前先将远程repository修改pull下来
 	git pull origin master
 	git push -u origin master
+
