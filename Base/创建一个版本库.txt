@@ -1,0 +1,6 @@
+1.创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：
+mkdir learngit
+cd learngit
+pwd
+2.第二步，通过git init命令把这个目录变成Git可以管理的仓库
+	git init
