@@ -25,6 +25,13 @@ push前先将远程repository修改pull下来
 	git push -u origin master
 
 
+把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+
+由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样
+
+
 在多台电脑使用git管理开发分支的时候，会出现这样的情况。电脑A创建了分支1，并且push上了远程仓库。
 
 电脑B本地clone仓库默认只会clone下master分支，而其他电脑A推送的分支是不会默认同步下来的。
@@ -34,3 +41,20 @@ push前先将远程repository修改pull下来
 查看电脑B本地仓库的分支
 
  git branch -a 
+ 
+ 
+ git push  origin master
+ 
+ 
+ 
+ 更新远程分支列表
+git remote update origin --prune
+
+查看所有分支
+git branch -a
+
+删除远程分支Chapater6
+git push origin --delete Chapater6
+
+删除本地分支 Chapater6
+git branch -d  Chapater6
