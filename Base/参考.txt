@@ -15,3 +15,120 @@
 
 $ git config --global user.name "ChenYiMin-Dev"
 $ git config --global user.email 254906610@qq.com
+
+
+ssh-keygen -t rsa -b 4096 -C "loseyyou@gmail.com"
+安全码 gy6511109
+
+
+ssh-keygen -t rsa -b 4096 -C "254906610@qq.com"
+
+
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/ChenYiMin/.ssh/id_rsa):
+Created directory '/c/Users/ChenYiMin/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/ChenYiMin/.ssh/id_rsa.
+Your public key has been saved in /c/Users/ChenYiMin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:pSTdSIv9PDFjHkqsx7QfPVlG9VwxVw+ocy3hExHGR7o loseyyou@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|        .  .+=++B|
+|       * + .=o.o*|
+|      o X Oo.=o +|
+|       B Xo*==.  |
+|      . S *oEo   |
+|       . . o .   |
+|          .      |
+|                 |
+|                 |
++----[SHA256]-----+
+
+
+cat /chenyimin/id_rsa.pub >> ~/.ssh/authorized_keys
+
+git@github.com:ymchen/hello-world.git
+
+git remote set-url origin git@github.com:ymchen/hello-world.git
+
+
+ssh-keygen -t rsa -b 4096 -C "254906610@gmail.com"
+
+
+
+
+
+
+GitHub Help
+GitHub.com
+Enterprise Server
+GitHub Actions
+GitHub Desktop
+Atom 
+Electron 
+English 
+GitHub.com Authentication Connecting to GitHub with SSH Generating a new SSH key and adding it to the ssh-agent
+Generating a new SSH key and adding it to the ssh-agent
+After you've checked for existing SSH keys, you can generate a new SSH key to use for authentication, then add it to the ssh-agent.
+
+Mac
+Windows
+Linux
+In this article
+Generating a new SSH key
+Adding your SSH key to the ssh-agent
+Further reading
+If you don't already have an SSH key, you must generate a new SSH key. If you're unsure whether you already have an SSH key, check for existing keys.
+
+If you don't want to reenter your passphrase every time you use your SSH key, you can add your key to the SSH agent, which manages your SSH keys and remembers your passphrase.
+
+Generating a new SSH key
+Open Git Bash.
+
+Paste the text below, substituting in your GitHub email address.
+
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+This creates a new ssh key, using the provided email as a label.
+
+> Generating public/private rsa key pair.
+When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+
+> Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
+
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+Adding your SSH key to the ssh-agent
+Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key.
+If you have GitHub Desktop installed, you can use it to clone repositories and not deal with SSH keys. It also comes with the Git Bash tool, which is the preferred way of running git commands on Windows.
+
+Ensure the ssh-agent is running:
+
+If you are using the Git Shell that's installed with GitHub Desktop, the ssh-agent should be running.
+If you are using another terminal prompt, such as Git for Windows, you can use the "Auto-launching the ssh-agent" instructions in "Working with SSH key passphrases", or start it manually:
+
+# start the ssh-agent in the background
+$ eval $(ssh-agent -s)
+> Agent pid 59566
+Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.
+
+$ ssh-add ~/.ssh/id_rsa
+Add the SSH key to your GitHub account.
+
+Further reading
+"About SSH"
+"Working with SSH key passphrases"
+"Authorizing an SSH key for use with SAML single sign-on"
+Ask a human
+Can't find what you're looking for?
+Product
+
+
+clip < ~/.ssh/id_rsa.pub
+
+
+用git status查看git状态提示中文乱码:274\232\350\256\256\346\200\273
+git config --global core.quotepath false
