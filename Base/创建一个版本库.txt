@@ -66,7 +66,7 @@ git branch -d  Chapater6
 git checkout -b dev (创建新分支)
 coding->commit-push dev (代码的更改都存在dev分支下)
 git checkout master (合并前，切换到主分支)
-git pull (拉一下)
+git pull  origin master (拉一下)
 git checkout dev (切回dev)
 git merge master (合并，有冲突解决冲突)
 git commit (保存确认)
