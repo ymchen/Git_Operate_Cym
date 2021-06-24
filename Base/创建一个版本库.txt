@@ -24,3 +24,13 @@ push前先将远程repository修改pull下来
 	git pull origin master
 	git push -u origin master
 
+
+在多台电脑使用git管理开发分支的时候，会出现这样的情况。电脑A创建了分支1，并且push上了远程仓库。
+
+电脑B本地clone仓库默认只会clone下master分支，而其他电脑A推送的分支是不会默认同步下来的。
+
+那么如何同步呢？
+
+查看电脑B本地仓库的分支
+
+ git branch -a 

@@ -47,9 +47,11 @@ The key's randomart image is:
 |                 |
 +----[SHA256]-----+
 
+cd /c/Users/ChenYiMin/.ssh
 
-cat /chenyimin/id_rsa.pub >> ~/.ssh/authorized_keys
 
+cat id_rsa.pub >> ~/.ssh/authorized_keys
+ 
 git@github.com:ymchen/hello-world.git
 
 git remote set-url origin git@github.com:ymchen/hello-world.git
