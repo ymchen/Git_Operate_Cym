@@ -133,4 +133,8 @@ clip < ~/.ssh/id_rsa.pub
 
 
 用git status查看git状态提示中文乱码:274\232\350\256\256\346\200\273
+
 git config --global core.quotepath false
+
+
+add
