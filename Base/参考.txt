@@ -138,3 +138,23 @@ git config --global core.quotepath false
 
 
 add
+import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+pip 当前内建命令并不支持升级所有已安装的Python模块。
+
+列出当前安装的包：
+
+ pip list
+列出可升级的包：
+
+ pip list --outdate
+升级一个包：
+
+ pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H
+升级所有可升级的包：
+pip freeze --local | grep -v '^-e' | cut -d = -f 1  | xargs -n1 pip install -U
+ 
+for i in `pip list -o --format legacy|awk '{print $1}'` ; 
+
+
+安装 page control
+tools command palette
