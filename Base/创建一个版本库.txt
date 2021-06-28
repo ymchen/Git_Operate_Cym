@@ -1,44 +1,44 @@
-1.����һ���汾��ǳ��򵥣����ȣ�ѡ��һ�����ʵĵط�������һ����Ŀ¼��
+1.创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：
 mkdir learngit
 cd learngit
 pwd
 
 
-2.�ڶ�����ͨ��git init��������Ŀ¼���Git���Թ����Ĳֿ�
+2.第二步，通过git init命令把这个目录变成Git可以管理的仓库
 	git init
 	
-3. ���Ѿ��ڱ��ش�����һ��Git�ֿ��������GitHub����һ��Git�ֿ⣬
-�������������ֿ����Զ��ͬ����������GitHub�ϵĲֿ�ȿ�����Ϊ���ݣ�
-�ֿ�����������ͨ���òֿ���Э��,��½GitHub��Ȼ��
-�����Ͻ��ҵ���Create a new repo����ť������һ���µĲֿ�
-���Դ�����ֿ��¡���µĲֿ⣬Ҳ���԰�һ�����еı��زֿ���֮������
-Ȼ�󣬰ѱ��زֿ���������͵�GitHub�ֿ�
+3. 你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，
+并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，
+又可以让其他人通过该仓库来协作,登陆GitHub，然后，
+在右上角找到“Create a new repo”按钮，创建一个新的仓库
+可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，
+然后，把本地仓库的内容推送到GitHub仓库
 	git remote add origin https://github.com/ymchen/Git_Operate_Cym.git
 
-��Ϊ���������½���Ŀ��ʱ��, ��ѡ��"ʹ��Readme�ļ���ʼ�������Ŀ", ���Ի�����һ�����µ��ļ�, ���㱾�ؿⲢû��, ���Գ�����. ��ʾʹ�� ' git pull ... ' ����..
-git pull --rebase origin master, ��gitee�ϵ��ļ��ͱ��ؿ�ϲ�.
+因为在码云上新建项目的时候, 勾选了"使用Readme文件初始化这个项目", 所以会生成一个如下的文件, 而你本地库并没有, 所以出错了. 提示使用 ' git pull ... ' 命令..
+git pull --rebase origin master, 将gitee上的文件和本地库合并.
 
 Updates were rejected because the tip of your current branch is behind
-�մ�����github�汾�⣬��push����ʱ�������ϴ��������¼��ֽ��������
-pushǰ�Ƚ�Զ��repository�޸�pull����
+刚创建的github版本库，在push代码时遇到以上错误：有如下几种解决方法：
+push前先将远程repository修改pull下来
 	git pull origin master
 	git push -u origin master
 
 
-�ѱ��ؿ���������͵�Զ�̣���git push���ʵ�����ǰѵ�ǰ��֧master���͵�Զ�̡�
+把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
 
-����Զ�̿��ǿյģ����ǵ�һ������master��֧ʱ��������-u������Git������ѱ��ص�master��֧�������͵�Զ���µ�master��֧������ѱ��ص�master��֧��Զ�̵�master��֧�������������Ժ�����ͻ�����ȡʱ�Ϳ��Լ����
+由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
 
-���ͳɹ��󣬿���������GitHubҳ���п���Զ�̿�������Ѿ��ͱ���һģһ��
+推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样
 
 
-�ڶ�̨����ʹ��git����������֧��ʱ�򣬻�������������������A�����˷�֧1������push����Զ�ֿ̲⡣
+在多台电脑使用git管理开发分支的时候，会出现这样的情况。电脑A创建了分支1，并且push上了远程仓库。
 
-����B����clone�ֿ�Ĭ��ֻ��clone��master��֧������������A���͵ķ�֧�ǲ���Ĭ��ͬ�������ġ�
+电脑B本地clone仓库默认只会clone下master分支，而其他电脑A推送的分支是不会默认同步下来的。
 
-��ô���ͬ���أ�
+那么如何同步呢？
 
-�鿴����B���زֿ�ķ�֧
+查看电脑B本地仓库的分支
 
  git branch -a 
  
@@ -47,125 +47,125 @@ pushǰ�Ƚ�Զ��repository�޸�pull����
  
  
  
- ����Զ�̷�֧�б�
+ 更新远程分支列表
 git remote update origin --prune
 
-�鿴���з�֧
+查看所有分支
 git branch -a
 
-ɾ��Զ�̷�֧Chapater6
+删除远程分支Chapater6
 git push origin --delete Chapater6
 
-ɾ�����ط�֧ Chapater6
+删除本地分支 Chapater6
 git branch -d  Chapater6
 
+sss
 
+使用dev分支开发，完成后合并到远程master分支的操作过程
 
-ʹ��dev��֧��������ɺ�ϲ���Զ��master��֧�Ĳ�������
-
-git checkout -b dev (�����·�֧)
-coding->commit-push dev (����ĸ��Ķ�����dev��֧��)
-git checkout master (�ϲ�ǰ���л�������֧)
-git pull  origin master (��һ��)
-git checkout dev (�л�dev)
-git merge master (�ϲ����г�ͻ�����ͻ)
-git commit (����ȷ��)
-git checkout master (�л���master)
-git merge dev --squash (��֧�ϲ�)
+git checkout -b dev (创建新分支)
+coding->commit-push dev (代码的更改都存在dev分支下)
+git checkout master (合并前，切换到主分支)
+git pull  origin master (拉一下)
+git checkout dev (切回dev)
+git merge master (合并，有冲突解决冲突)
+git commit (保存确认)
+git checkout master (切换回master)
+git merge dev --squash (分支合并)
 git commit
 git push origin
 
-���ڰ汾����
-ʲô�ǡ��汾���ơ�����ΪʲôҪ�������أ�
- �汾������һ�ּ�¼һ���������ļ����ݱ仯��
- �Ա㽫�������ض��汾�޶������ϵͳ�� 
- �ڱ�����չʾ�������У����ǶԱ���������Դ������ļ����汾���ƣ�
- ��ʵ���ϣ�����Զ��κ����͵��ļ����а汾���ơ�
+关于版本控制
+什么是“版本控制”？我为什么要关心它呢？
+ 版本控制是一种记录一个或若干文件内容变化，
+ 以便将来查阅特定版本修订情况的系统。 
+ 在本书所展示的例子中，我们对保存着软件源代码的文件作版本控制，
+ 但实际上，你可以对任何类型的文件进行版本控制。
 
-�������λͼ�λ���ҳ���ʦ�����ܻ���Ҫ����ĳһ��ͼƬ��ҳ�沼���ļ��������޶��汾�����������ǳ�����ӵ�еĹ��ܣ���
-���ð汾����ϵͳ��VCS���Ǹ����ǵ�ѡ�� ��������Ϳ��Խ�ѡ�����ļ����ݵ�֮ǰ��״̬��������������Ŀ�����˵���ȥĳ��ʱ����״̬��
-����ԱȽ��ļ��ı仯ϸ�ڣ���������˭�޸����ĸ��ط����Ӷ��ҳ����¹���������ֵ�ԭ������˭�ں�ʱ������ĳ������ȱ�ݵȵȡ�
- ʹ�ð汾����ϵͳͨ������ζ�ţ�����������һ����������Ŀ�е��ļ��ĵĸ�ɾ��ɾ��
- ��Ҳ�����������ɻָ���ԭ�ȵ����ӡ� ���������ӵĹ�����ȴ΢����΢��
+如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），
+采用版本控制系统（VCS）是个明智的选择。 有了它你就可以将选定的文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，
+你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。
+ 使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，
+ 你也照样可以轻松恢复到原先的样子。 但额外增加的工作量却微乎其微。
 
-���ذ汾����ϵͳ
-������ϰ���ø���������ĿĿ¼�ķ�ʽ�����治ͬ�İ汾����������������ϱ���ʱ����ʾ����
-��ô��Ψһ�ĺô����Ǽ򵥣�
-�����ر����׷����� ��ʱ���������ڵĹ���Ŀ¼��һ��С�Ļ�д���ļ����߸�����������ļ�
+本地版本控制系统
+许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。
+这么做唯一的好处就是简单，
+但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件
 
 
-1.���л��İ汾����ϵͳ
-����������������һ�����⣬������ڲ�ͬϵͳ�ϵĿ�����Эͬ������ ���ǣ�
-���л��İ汾����ϵͳ��Centralized Version Control Systems����� CVCS��Ӧ�˶�����
- ����ϵͳ������ CVS��Subversion �Լ� Perforce �ȣ�����һ����һ�ļ��й����ķ����������������ļ����޶��汾
-����Эͬ���������Ƕ�ͨ���ͻ���������̨��������ȡ�����µ��ļ������ύ���¡�
- �������������ѳ�Ϊ�汾����ϵͳ�ı�׼������
-2.�ֲ�ʽ�汾����ϵͳ
-���Ƿֲ�ʽ�汾����ϵͳ��Distributed Version Control System����� DVCS�������ˡ� 
-������ϵͳ�У��� Git��Mercurial��Bazaar �Լ� Darcs �ȣ��ͻ��˲���ֻ��ȡ���°汾���ļ����գ�
- ���ǰѴ���ֿ������ؾ���������������������ʷ��¼�� 
-��ôһ�����κ�һ��Эͬ�����õķ������������ϣ��º󶼿������κ�һ����������ı��زֿ�ָ���
- ��Ϊÿһ�εĿ�¡������ʵ���϶���һ�ζԴ���ֿ���������ݡ�
+1.集中化的版本控制系统
+接下来人们又遇到一个问题，如何让在不同系统上的开发者协同工作？ 于是，
+集中化的版本控制系统（Centralized Version Control Systems，简称 CVCS）应运而生。
+ 这类系统，诸如 CVS、Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本
+，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。
+ 多年以来，这已成为版本控制系统的标准做法。
+2.分布式版本控制系统
+于是分布式版本控制系统（Distributed Version Control System，简称 DVCS）面世了。 
+在这类系统中，像 Git、Mercurial、Bazaar 以及 Darcs 等，客户端并不只提取最新版本的文件快照，
+ 而是把代码仓库完整地镜像下来，包括完整的历史记录。 
+这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。
+ 因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。
  
- ֱ�Ӽ�¼���գ����ǲ���Ƚ�
+ 直接记录快照，而非差异比较
  
  
- ����״̬
-������ע�⣬�����ϣ�������ѧϰ��˳�������ס������Щ���� Git �ĸ�� Git ������״̬������ļ����ܴ�������֮һ�� ���ύ��committed�������޸ģ�modified�� �� ���ݴ棨staged����
+ 三种状态
+现在请注意，如果你希望后面的学习更顺利，请记住下面这些关于 Git 的概念。 Git 有三种状态，你的文件可能处于其中之一： 已提交（committed）、已修改（modified） 和 已暂存（staged）。
 
-���޸ı�ʾ�޸����ļ�������û���浽���ݿ��С�
+已修改表示修改了文件，但还没保存到数据库中。
 
-���ݴ��ʾ��һ�����޸��ļ��ĵ�ǰ�汾���˱�ǣ�ʹ֮�������´��ύ�Ŀ����С�
+已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。
 
-���ύ��ʾ�����Ѿ���ȫ�ر����ڱ������ݿ��С�
-
-
-�������Ƕ���Ŀ��ĳ���汾������ȡ���������ݡ� ��Щ�� Git �ֿ��ѹ�����ݿ�����ȡ�������ļ������ڴ����Ϲ���ʹ�û��޸ġ�
-
-�ݴ�����һ���ļ����������´ν�Ҫ�ύ���ļ��б���Ϣ��һ���� Git �ֿ�Ŀ¼�С� ���� Git �����������������������һ��˵�����ǽС��ݴ�������
-
-Git �ֿ�Ŀ¼�� Git ����������Ŀ��Ԫ���ݺͶ������ݿ�ĵط��� ���� Git ������Ҫ�Ĳ��֣��������������¡�ֿ�ʱ�����Ƶľ�����������ݡ�
-
-���������Ϣ
-�����Ҫ���������ã�����ʹ�� git config --list �������г����� Git ��ʱ���ҵ������á�
+已提交表示数据已经安全地保存在本地数据库中。
 
 
-��ȡ Git �ֿ�
-ͨ�������ֻ�ȡ Git ��Ŀ�ֿ�ķ�ʽ��
+工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。
 
-����δ���а汾���Ƶı���Ŀ¼ת��Ϊ Git �ֿ⣻
+暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。
 
-������������ ��¡ һ���Ѵ��ڵ� Git �ֿ⡣
+Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。
 
-���ַ�ʽ��������ı��ػ����ϵõ�һ������������ Git �ֿ⡣
+检查配置信息
+如果想要检查你的配置，可以使用 git config --list 命令来列出所有 Git 当时能找到的配置。
+
+
+获取 Git 仓库
+通常有两种获取 Git 项目仓库的方式：
+
+将尚未进行版本控制的本地目录转换为 Git 仓库；
+
+从其它服务器 克隆 一个已存在的 Git 仓库。
+
+两种方式都会在你的本地机器上得到一个工作就绪的 Git 仓库。
 
 
 git init
 
-���������һ����Ϊ .git ����Ŀ¼�������Ŀ¼�������ʼ���� Git �ֿ������еı����ļ�����Щ�ļ��� Git �ֿ�ĹǸɡ� 
-���ǣ������ʱ�����ǽ���������һ����ʼ���Ĳ����������Ŀ����ļ���û�б����١� 
-(�μ� Git �ڲ�ԭ�� ���˽������ڵ��� .git �ļ����а�������Щ�ļ�����Ϣ��)
+该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。 
+但是，在这个时候，我们仅仅是做了一个初始化的操作，你的项目里的文件还没有被跟踪。 
+(参见 Git 内部原理 来了解更多关于到底 .git 文件夹中包含了哪些文件的信息。)
 
-�����һ���Ѵ����ļ����ļ��У����ǿ��ļ��У��н��а汾���ƣ���Ӧ�ÿ�ʼ׷����Щ�ļ������г�ʼ�ύ�� 
-����ͨ�� git add ������ָ��������ļ�������׷�٣�Ȼ��ִ�� git commit ��
+如果在一个已存在文件的文件夹（而非空文件夹）中进行版本控制，你应该开始追踪这些文件并进行初始提交。 
+可以通过 git add 命令来指定所需的文件来进行追踪，然后执行 git commit ：
 
 
-����ڵ�ǰĿ¼�´���һ����Ϊ ��libgit2�� ��Ŀ¼���������Ŀ¼�³�ʼ��һ�� .git �ļ��У� ��Զ�ֿ̲���ȡ���������ݷ��� .git �ļ��У�Ȼ����ж�ȡ���°汾���ļ��Ŀ����� �������뵽����½��� libgit2 �ļ��У���ᷢ�����е���Ŀ�ļ��Ѿ��������ˣ�׼�������ȴ������Ŀ�����ʹ�á�
+这会在当前目录下创建一个名为 “libgit2” 的目录，并在这个目录下初始化一个 .git 文件夹， 从远程仓库拉取下所有数据放入 .git 文件夹，然后从中读取最新版本的文件的拷贝。 如果你进入到这个新建的 libgit2 文件夹，你会发现所有的项目文件已经在里面了，准备就绪等待后续的开发和使用。
 
-��������ڿ�¡Զ�ֿ̲��ʱ���Զ��屾�زֿ�����֣������ͨ������Ĳ���ָ���µ�Ŀ¼����
+如果你想在克隆远程仓库的时候，自定义本地仓库的名字，你可以通过额外的参数指定新的目录名：
 
 $ git clone https://github.com/libgit2/libgit2 mylibgit
-���ִ������һ��������ͬ�Ĳ�������Ŀ��Ŀ¼����Ϊ�� mylibgit��
+这会执行与上一条命令相同的操作，但目标目录名变为了 mylibgit。
 
 
-״̬����
-git status ��������ʮ����ϸ������������Щ������ Git ��һ��ѡ����԰�������״̬�������������������Լ��ķ�ʽ�鿴���ġ� 
-�����ʹ�� git status -s ����� git status --short ����㽫�õ�һ�ָ�ʽ��Ϊ���յ����
+状态简览
+git status 命令的输出十分详细，但其用语有些繁琐。 Git 有一个选项可以帮你缩短状态命令的输出，这样可以以简洁的方式查看更改。 
+如果你使用 git status -s 命令或 git status --short 命令，你将得到一种格式更为紧凑的输出
 
 
-��α���ÿ����������
-���������ʹ�� HTTPS URL �����ͣ�Git ��������ѯ���û��������롣 Ĭ���������������
-������ʾ�������Ƿ�������������͡�
-���������ÿһ������ʱ�������û��������룬���������һ�� ��credential cache���� ��
-�򵥵ķ�ʽ���ǽ��䱣�����ڴ��м����ӣ����Լ򵥵����� git config --global
-credential.helper cache ����������
+如何避免每次输入密码
+如果你正在使用 HTTPS URL 来推送，Git 服务器会询问用户名与密码。 默认情况下它会在终
+端中提示服务器是否允许你进行推送。
+如果不想在每一次推送时都输入用户名与密码，你可以设置一个 “credential cache”。 最
+简单的方式就是将其保存在内存中几分钟，可以简单地运行 git config --global
+credential.helper cache 来设置它。
