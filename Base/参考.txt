@@ -1,24 +1,24 @@
-1.����
-�� Windows �ϰ�װ
-�� Windows �ϰ�װ Git Ҳ�м��ְ�װ������ �ٷ��汾������ Git �ٷ���վ���ء� �� http://git-scm.com/download/win�����ػ��Զ���ʼ�� Ҫע������һ����Ϊ Git for Windows ����Ŀ��Ҳ���� msysGit����
-�� Git �Ƿֱ��������Ŀ��������Ϣ����� http://msysgit.github.io/��
+1.下载
+在 Windows 上安装
+在 Windows 上安装 Git 也有几种安装方法。 官方版本可以在 Git 官方网站下载。 打开 http://git-scm.com/download/win，下载会自动开始。 要注意这是一个名为 Git for Windows 的项目（也叫做 msysGit），
+和 Git 是分别独立的项目；更多信息请访问 http://msysgit.github.io/。
 
-��һ���򵥵ķ����ǰ�װ GitHub for Windows�� �ð�װ�������ͼ�λ��������а汾�� Git�� 
-��Ҳ��֧�� Powershell���ṩ���ȶ���ƾ֤����ͽ�ȫ�Ļ������á� �Ժ����ǻ���ⷽ���и����˽⣬
-����ֻҪһ�仰�͹��ˣ���Щ����������Ҫ�ġ� ������� GitHub for Windows ��վ���أ�
-��ַΪ http://windows.github.com��
+另一个简单的方法是安装 GitHub for Windows。 该安装程序包含图形化和命令行版本的 Git。 
+它也能支持 Powershell，提供了稳定的凭证缓存和健全的换行设置。 稍后我们会对这方面有更多了解，
+现在只要一句话就够了，这些都是你所需要的。 你可以在 GitHub for Windows 网站下载，
+网址为 http://windows.github.com。
 
 
-�û���Ϣ
-����װ�� Git Ӧ�����ĵ�һ���¾�����������û��������ʼ���ַ��
- ����������Ҫ����Ϊÿһ�� Git ���ύ����ʹ����Щ��Ϣ����������д�뵽���ÿһ���ύ�У����ɸ��ģ�
+用户信息
+当安装完 Git 应该做的第一件事就是设置你的用户名称与邮件地址。
+ 这样做很重要，因为每一个 Git 的提交都会使用这些信息，并且它会写入到你的每一次提交中，不可更改：
 
 $ git config --global user.name "ChenYiMin-Dev"
 $ git config --global user.email 254906610@qq.com
 
 
 ssh-keygen -t rsa -b 4096 -C "loseyyou@gmail.com"
-��ȫ�� gy6511109
+安全码 gy6511109
 
 
 ssh-keygen -t rsa -b 4096 -C "254906610@qq.com"
@@ -132,29 +132,29 @@ Product
 clip < ~/.ssh/id_rsa.pub
 
 
-��git status�鿴git״̬��ʾ��������:274\232\350\256\256\346\200\273
+用git status查看git状态提示中文乱码:274\232\350\256\256\346\200\273
 
 git config --global core.quotepath false
 
 
 add
 import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
-pip ��ǰ�ڽ������֧�����������Ѱ�װ��Pythonģ�顣
+pip 当前内建命令并不支持升级所有已安装的Python模块。
 
-�г���ǰ��װ�İ���
+列出当前安装的包：
 
  pip list
-�г��������İ���
+列出可升级的包：
 
  pip list --outdate
-����һ������
+升级一个包：
 
- pip install --upgrade requests  // mac,linux,unix ������ǰ�� sudo -H
-�������п������İ���
+ pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H
+升级所有可升级的包：
 pip freeze --local | grep -v '^-e' | cut -d = -f 1  | xargs -n1 pip install -U
  
 for i in `pip list -o --format legacy|awk '{print $1}'` ; 
 
 
-��װ page control
+安装 page control
 tools command palette
