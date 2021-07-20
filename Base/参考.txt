@@ -157,4 +157,26 @@ for i in `pip list -o --format legacy|awk '{print $1}'` ;
 
 
 安装 page control
-tools command palette
+
+
+安装 psutil
+安装 psutil
+pip install psutil
+
+
+源数据接入，基础层、汇总层、整合层、集市层；
+● 并整合前端的报表应用，负责其他应用系统的供数；
+● 负责前台的需求分析、设计。数据运维；
+● 应用技术：DB2、Datastage、Cognos
+
+1148muq
+1148muq
+
+优启通3.3版本
+
+老毛桃
+
+
+select attrelid,attnum,attname
+from pg_attribute
+where attrelid = 'pg_catalog.pg_class'::regclass::oid;
