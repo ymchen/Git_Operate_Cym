@@ -6,7 +6,8 @@
 
 
 
-
-
-
-  fdgsdfgsf
+执行如下SQL 检查是否有执行时间超过6小时的语句
+SELECT *
+from pg_stat_activity
+where current_query<>'<IDLE>'
+and query_start < now()-interval '6 hours'
