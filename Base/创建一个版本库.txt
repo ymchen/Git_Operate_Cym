@@ -59,8 +59,7 @@ git push origin --delete Chapater6
 删除本地分支 Chapater6
 git branch -d  Chapater6
 
-sss
-
+ 
 使用dev分支开发，完成后合并到远程master分支的操作过程
 
 git checkout -b dev (创建新分支)
