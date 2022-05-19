@@ -24,6 +24,8 @@ ssh-keygen -t rsa -b 4096 -C "loseyyou@gmail.com"
 ssh-keygen -t rsa -b 4096 -C "254906610@qq.com"
 
 
+ssh-keygen -t ed25519 -C "loseyyou@gmail.com"
+
 
 Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/ChenYiMin/.ssh/id_rsa):
